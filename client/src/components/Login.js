@@ -7,7 +7,6 @@ export default function Login() {
     const google = window.google;
     // VVV below comment prevents lintor from marking google as undefined? (Might be deprecated) (it's defined in index.html
     /*global google*/ 
-    //test
     const {user, setUser} = useContext(LoginContext) //declared in App.js. Here we extract it using Context.api
 
     function handleCallbackResponse(response){
