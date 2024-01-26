@@ -1,3 +1,6 @@
+// above comment prevents lintor from marking google as undefined? (Might be deprecated) (it's defined in index.html
+
+
 import logo from './logo.svg';
 import { useEffect, useState } from 'react';
 import { jwtDecode } from "jwt-decode";
@@ -8,9 +11,8 @@ import Dashboard from './pages/Dashboard';
 
 function App() {
 
-  const google = window.google;
-   // VVV below comment prevents lintor from marking google as undefined? (Might be deprecated) (it's defined in index.html
-   /*global google*/ 
+  // const google = window.google; //original definition, although this resulted in errors
+  // window.google = window.google ? window.google : {}; //If google doesn't exist, assign as empty object first.
   const [user, setUser] = useState({}) //temporary, don't use this normally, use context API or Redux
 
   // function handleSignOut(event){
@@ -19,7 +21,6 @@ function App() {
   // }
 
   useEffect(()=> {
-
   }, []); //if anything in array is modified, it reloads the page
   
   
